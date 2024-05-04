@@ -1,0 +1,421 @@
+*, *::before, *::after { 
+  box-sizing: border-box;
+}
+
+html, body { 
+  height: 100%;
+  margin: 0;
+  background-color: black;
+ 
+
+  font-family: sans-serif;
+}
+
+#chat-app{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-page { 
+  display: grid;
+  grid-template-areas: 
+    "header-text"
+    "logout"
+    "error"
+    "center-rectangle"
+  ;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: auto auto auto  1fr;
+  grid-auto-flow: column;
+  color: white;
+
+  height: 100%;
+  width: 100%;
+}
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  width: 100%;
+}
+.chat-page {
+  display: grid;
+  grid-template-areas: 
+    "name logout"
+    "rerender rerender"
+    "outgoing outgoing";
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%; 
+  width: 100%;
+}
+
+.name{
+  display: flex;
+  grid-area: name;
+  grid-column: 1 / span 11;
+  justify-content: center;
+  align-items: center;
+  grid-row: 1 / span 1;
+  
+}
+.disp-name{
+  font-size: 5rem;
+  color: #33ffc6;
+}
+
+.login { 
+ 
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  grid-column: 1 / span 12;
+  box-sizing: border-box;
+  background-color: #2E4057;
+
+
+}
+
+
+.form{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+   
+
+}
+
+.username{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 60%;
+}
+
+.to-send{
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.message-box{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.datachange{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+
+}
+
+.logout{
+  grid-area: logout;
+  grid-column: 12 / span 13;
+  grid-row: 1 / span 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+
+   }
+
+.logoutbutton{
+  color: white;
+  background-color: #2c075A;
+  font-size: medium;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+
+.center-rectangle {
+  grid-area: center-rectangle;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 30%;
+  width: 40%;
+  height: 60%;
+  top: 20%;
+
+  background: rgba(217, 217, 217, 0);
+  border-radius: 42px;
+  border: 3px white solid;
+  color: white;
+  grid-column: 1 / span 12;
+}
+
+.header-text{
+grid-area: header-text; 
+color: red;
+display: flex; 
+flex-direction: row;
+justify-content: center;
+
+grid-column: 1 / span 12;
+}
+
+
+.invalidusername{
+grid-area: error;
+grid-column: 1 / span 12;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: red;
+}
+
+
+.loginlink{
+color: yellowgreen;
+}
+
+.login-header{
+color: white;
+}
+
+
+
+.button-type-one {
+  color: white;
+  background-color: #2c075A;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 0px #ffffff21;
+  cursor: pointer;
+  width: 40%;
+  height: 100%;
+}
+
+.button-type-two {
+  color: white;
+  background-color: #2c075A;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 0px #ffffff21;
+  cursor: pointer;
+  width: 20%;
+  height: 100%;
+}
+
+
+/* ----New Added Code--- */
+
+.users { 
+  grid-area: users;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 0;
+  margin: 0;
+  grid-column: 1 / span 2;
+ color: #33ffc6;
+ background-color: gray;
+
+  overflow-y: auto;
+
+  list-style-type: none;
+}
+
+.user{
+  padding: 1rem;
+}
+
+.messages { 
+  grid-area: messages;
+  grid-column: 3 / span 11;
+  padding: 0;
+ 
+  padding: 1rem;
+
+  overflow-y: auto;
+
+  list-style-type: none;
+}
+
+.avatar { 
+  height: 2rem;
+}
+
+
+
+.message { 
+  display: flex;
+
+  margin-bottom: 1rem;
+}
+
+.sender-info { 
+  display: flex;
+  padding: 1rem;
+ 
+}
+
+.message-text { 
+
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  margin-top: auto;
+  color: white;
+
+ 
+}
+
+.messagelist{
+  display: flex;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.message-box{
+  display: flex;
+  flex-direction: column;
+  background-color: #2c075A;
+  width: 100%;
+  padding: 1rem;
+}
+
+
+.to-send{
+
+  width: 50%;
+  height: 90%;
+  margin: 1rem;
+}
+
+
+.outgoing { 
+  grid-area: outgoing;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  grid-column: 1 / 13;
+  box-sizing: border-box;
+  grid-row: 10 / span 13;
+  background-color: #2E4057;
+
+
+}
+
+.users-online{
+  color:#2c075A;
+  font-weight: 700;
+}
+
+
+.chat-username { 
+  width: 100%;
+  display: flex;
+  color: #33ffc6;
+  padding-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+
+.re-render{
+  grid-area: rerender;
+  display: grid;
+  grid-template-areas: 
+  "users messages"
+  "outgoing outgoing";
+  grid-column: 1 / span 12;
+  grid-row: 2 / span 9;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows:  auto;
+  
+;
+}
+
+@keyframes loadbaralt {
+  0%,to { left: 0; right: 100% }
+ 
+  50% { left: 70%; right: 0 }
+}
+
+
+.gg-loadbar-alt,
+.gg-loadbar-alt::before,
+.gg-loadbar-alt::after {
+  display: flex;
+  box-sizing: border-box;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border-radius: 4px;
+}
+
+.gg-loadbar-alt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 300px;
+  transform: scale(var(--ggs, 1));
+  background-color: #f0f0f0; /* Optional background color */
+  position: relative; /* Required for absolute positioning of ::before and ::after */
+}
+
+.gg-loadbar-alt::after,
+.gg-loadbar-alt::before {
+  background: currentColor;
+  content: "";
+  position: absolute;
+}
+
+.gg-loadbar-alt::before {
+  animation: loadbaralt 2s cubic-bezier(0,0,0,0) infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2c075A;
+}
+
+.gg-loadbar-alt::after {
+  width: 1px;
+  opacity: .3;
+  bottom: 0;
+  left: 0;
+}

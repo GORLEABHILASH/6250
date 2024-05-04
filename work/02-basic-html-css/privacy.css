@@ -1,0 +1,13 @@
+.main__content::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    color: brown;
+  }
+
+.main__content{
+    line-height: 1.6;
+}
+  
+.main{
+    margin: 3rem;
+}

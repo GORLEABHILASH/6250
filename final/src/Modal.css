@@ -1,0 +1,59 @@
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 3rem;
+  border: 0.1rem solid #ccc;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  border-radius: 1rem;
+}
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal__input {
+ padding: 1rem;
+}
+
+
+.modal__button {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+.modal__button button {
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.modal__button--save {
+  background-color: #4caf50;
+  color: white;
+}
+
+.modal__button--cancel {
+  background-color: #f44336;
+  color: white;
+}
